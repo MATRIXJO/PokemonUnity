@@ -29,7 +29,10 @@ using UnityEngine;
 * @class LTDescr
 * @constructor
 */
-public class LTDescr
+
+namespace Myspace
+{
+	public class LTDescr
 {
 	public bool toggle;
 	public bool useEstimatedTime;
@@ -2303,5 +2306,4 @@ public class LTDescr
 		return this;
 	}
 }
-
-//}
+}
