@@ -1,4 +1,3 @@
-//namespace DentedPixel{
 using System;
 using UnityEngine;
 
