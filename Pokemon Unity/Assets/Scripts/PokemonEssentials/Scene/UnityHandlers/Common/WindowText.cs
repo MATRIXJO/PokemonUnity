@@ -193,7 +193,8 @@ namespace PokemonUnity.Interface.UnityEngine
 				//if a timer tag is found, wait for the specified time
 				if (textDisplay[visibleCount - 1] == '\\' && textDisplay.ToString().Substring(visibleCount - 1).StartsWith("\\wait["))
 				{
-					var match = Regex.Match(textDisplay.ToString().Substring(visibleCount - 1), @"\\wait\[(\d+)\]");
+					TimeSpan timeout = TimeSpan.FromSeconds(1);
+            				var match = Regex.Match(textDisplay.ToString().Substring(visibleCount - 1), @"\bwait(\d+)$", RegexOptions.None, timeout);
 					if (match.Success)
 					{
 						int waitTime = int.Parse(match.Groups[1].Value);
