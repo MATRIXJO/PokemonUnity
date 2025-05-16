@@ -11,8 +11,10 @@ namespace PokemonUnity.Interface.UnityEngine
 
 			string pat1 = @"^(.*)\:\s*(\d+)\s*\:\s*(\d+)\s*$";
 			string pat2 = @"^(.*)\:\s*(\d+)\s*$";
-			System.Text.RegularExpressions.Regex r1 = new System.Text.RegularExpressions.Regex(pat1, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
-			System.Text.RegularExpressions.Regex r2 = new System.Text.RegularExpressions.Regex(pat2, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+			// Define a timeout duration (e.g., 1 second)
+			TimeSpan timeout = TimeSpan.FromSeconds(1);
+			System.Text.RegularExpressions.Regex r1 = new System.Text.RegularExpressions.Regex(pat1,System.Text.RegularExpressions.RegexOptions.IgnoreCase,timeout);
+			System.Text.RegularExpressions.Regex r2 = new System.Text.RegularExpressions.Regex(pat2,System.Text.RegularExpressions.RegexOptions.IgnoreCase,timeout);
 
 			//Regex the string to get name value, and other information
 			System.Text.RegularExpressions.Match m1 = r1.Match(name);
